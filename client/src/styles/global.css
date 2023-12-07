@@ -1,0 +1,31 @@
+:root {
+  --xs-sizing: 8rem;
+  --s-sizing: 16rem;
+  --m-sizing: 24rem;
+  --l-sizing: 32rem;
+  --xl-sizing: 64rem;
+  --xxl-sizing: 120rem;
+
+  --backgroud-color: #2b2938;
+}
+
+@font-face {
+  font-family: "MonumentExtended-Regular";
+  src: url(../assets/fonts/MonumentExtended-Regular.otf);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--backgroud-color);
+}
+p {
+  font-family: "Poppins", sans-serif;
+}

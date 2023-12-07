@@ -1,0 +1,40 @@
+---
+import "../styles/reset.css";
+import "../styles/global.css";
+import Speakers from "../components/Speakers.astro";
+import Header from "../components/Header.astro";
+
+import CTA from "../components/CTA.astro";
+import About from "../components/About.astro";
+
+
+
+
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>test</title>
+	</head>
+	<body>
+		
+	 <Header />
+	 <CTA  />
+	<About
+
+		<slot />
+	
+		
+	</body>
+</html>
+

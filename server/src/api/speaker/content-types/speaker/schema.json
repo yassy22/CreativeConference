@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "speakers",
+  "info": {
+    "singularName": "speaker",
+    "pluralName": "speakers",
+    "displayName": "speaker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "naam": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date",
+      "default": "2023-12-12",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "work": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

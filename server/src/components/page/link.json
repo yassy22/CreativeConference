@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_links",
+  "info": {
+    "displayName": "link",
+    "description": "",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "herf": {
+      "type": "string"
+    }
+  }
+}

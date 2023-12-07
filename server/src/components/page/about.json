@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_page_abouts",
+  "info": {
+    "displayName": "about",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

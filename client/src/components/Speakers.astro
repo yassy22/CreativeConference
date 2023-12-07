@@ -1,0 +1,29 @@
+---
+import fetchApi from '../lib/strapi';
+
+const speakers = await fetchApi({
+    endpoint: "speakers",
+    wrappedByKey:"data",
+    query:{
+      populate:[ "image", "description","name"],
+    }
+  });
+
+
+
+
+---
+
+
+    <h1>speakers</h1>
+{ speakers.map(({attributes: {naam,date,body,image }}) => (
+    <div>
+      <h2>{naam}</h2>
+        <img src={import.meta.env.STRAPI_URL+image.data.attributes.formats.medium.url} alt={naam} />
+      <p>{body}</p>
+      <p>{date}</p>
+      <p>{image.data.attributes.formats.medium.url}</p>
+    </div>
+))
+}  
+

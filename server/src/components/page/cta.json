@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_page_ctas",
+  "info": {
+    "displayName": "CTA",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "subHeader": {
+      "type": "string"
+    },
+    "SecondaryButton": {
+      "displayName": "link",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.link"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ]
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.link"
+    }
+  }
+}
