@@ -10,8 +10,13 @@
 }
 
 @font-face {
-  font-family: "MonumentExtended-Regular";
+  font-family: "MonumentExtended";
   src: url(../assets/fonts/MonumentExtended-Regular.otf);
+}
+
+@font-face {
+  font-family: "alphaLyrae";
+  src: url(../assets/fonts/AlphaLyrae-Medium.ttf);
 }
 
 html {
