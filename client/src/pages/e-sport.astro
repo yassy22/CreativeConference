@@ -1,10 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PlayersList from "../components/PlayersList.astro";
 const eSport = "E-sport";
+import fetchApi from '../lib/strapi';
+
+
+const players = await fetchApi({
+  endpoint: "players",
+  wrappedByKey: "data",
+  query: { populate: ["image","rol","group"]  },
+});
 
 ---
 
 
-<h1>{eSport}</h1>
+<Layout>
 
-<Layout/>
+
+    <PlayersList players={players} showCategory={false} />
+
+  
+  </Layout>
+
+

@@ -677,30 +677,159 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiPagePage extends Schema.CollectionType {
-  collectionName: 'pages';
+export interface ApiChampionChampion extends Schema.CollectionType {
+  collectionName: 'champions';
   info: {
-    singularName: 'page';
-    pluralName: 'pages';
-    displayName: 'page';
+    singularName: 'champion';
+    pluralName: 'champions';
+    displayName: 'champion';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    titel: Attribute.String;
-    description: Attribute.String;
-    slug: Attribute.UID<'api::page.page', 'titel'>;
-    metedata: Attribute.Component<'seo.meta-data', true>;
-    blocks: Attribute.DynamicZone<['page.cta', 'page.about']> &
-      Attribute.Required;
+    name: Attribute.String;
+    description: Attribute.Blocks;
+    image: Attribute.Media;
+    rol: Attribute.Relation<
+      'api::champion.champion',
+      'manyToOne',
+      'api::rol.rol'
+    >;
+    players: Attribute.Relation<
+      'api::champion.champion',
+      'manyToMany',
+      'api::player.player'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+    createdBy: Attribute.Relation<
+      'api::champion.champion',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
-    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+    updatedBy: Attribute.Relation<
+      'api::champion.champion',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGroupGroup extends Schema.CollectionType {
+  collectionName: 'groups';
+  info: {
+    singularName: 'group';
+    pluralName: 'groups';
+    displayName: 'group';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Blocks;
+    image: Attribute.Media;
+    players: Attribute.Relation<
+      'api::group.group',
+      'oneToMany',
+      'api::player.player'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::group.group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::group.group',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPlayerPlayer extends Schema.CollectionType {
+  collectionName: 'players';
+  info: {
+    singularName: 'player';
+    pluralName: 'players';
+    displayName: 'player';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Blocks;
+    image: Attribute.Media;
+    group: Attribute.Relation<
+      'api::player.player',
+      'manyToOne',
+      'api::group.group'
+    >;
+    rol: Attribute.Relation<'api::player.player', 'manyToOne', 'api::rol.rol'>;
+    champions: Attribute.Relation<
+      'api::player.player',
+      'manyToMany',
+      'api::champion.champion'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::player.player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::player.player',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRolRol extends Schema.CollectionType {
+  collectionName: 'rols';
+  info: {
+    singularName: 'rol';
+    pluralName: 'rols';
+    displayName: 'rol';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    players: Attribute.Relation<
+      'api::rol.rol',
+      'oneToMany',
+      'api::player.player'
+    >;
+    champions: Attribute.Relation<
+      'api::rol.rol',
+      'oneToMany',
+      'api::champion.champion'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::rol.rol', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::rol.rol', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -758,7 +887,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::page.page': ApiPagePage;
+      'api::champion.champion': ApiChampionChampion;
+      'api::group.group': ApiGroupGroup;
+      'api::player.player': ApiPlayerPlayer;
+      'api::rol.rol': ApiRolRol;
       'api::speaker.speaker': ApiSpeakerSpeaker;
     }
   }

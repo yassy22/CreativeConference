@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rols",
+  "info": {
+    "singularName": "rol",
+    "pluralName": "rols",
+    "displayName": "rol",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::player.player",
+      "mappedBy": "rol"
+    },
+    "champions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::champion.champion",
+      "mappedBy": "rol"
+    }
+  }
+}
