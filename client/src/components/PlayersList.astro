@@ -1,24 +1,26 @@
 ---
-import fetchApi from "../lib/strapi";
+import PlayerCard from "./PlayerCard.astro";
 
-import SpeakerCard from '../components/SpeakerCard.astro';
 
-const { players } = Astro.props;
+
+ const { players } = Astro.props;
 
 console.log(players);
-
 ---
 
-
-<ul>
-   {players.map(({attributes:{name,rol,group}}) => (
-    <h1>{name}</h1>
-    <h2>{rol.data.attributes.name}</h2>
-    <h2>{group.data.attributes.name}</h2>
    
-    ))}
 
-  </ul>
-  
 
-  
+
+  <ul>
+    {
+      players.map((players) => (
+        <li>
+          <h1> {players.attributes.name} </h1>
+          <a href={`/players/${players.id}`}>
+            <PlayerCard players={players} />
+          </a>
+        </li>
+      ))
+    }
+  </ul> 

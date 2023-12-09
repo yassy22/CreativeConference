@@ -1,25 +1,33 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import PlayersList from "../components/PlayersList.astro";
-const eSport = "E-sport";
-import fetchApi from '../lib/strapi';
+
+import Layout from '../layouts/Layout.astro';
+import PlayerCard from '../components/PlayerCard.astro';
 
 
-const players = await fetchApi({
-  endpoint: "players",
-  wrappedByKey: "data",
-  query: { populate: ["image","rol","group"]  },
-});
+import PlayersList from '../components/PlayersList.astro';
+
+
+
+// import fetchApi from '../lib/strapi';
+// const players = await fetchApi({
+//     endpoint: "players",
+//     wrappedByKey:"data",
+//     query:{
+//       populate:["image","group"],
+//     }
+//   });
+  
 
 ---
 
 
 <Layout>
+  <PlayerCard />
+</Layout>
 
 
-    <PlayersList players={players} showCategory={false} />
 
-  
-  </Layout>
+ 
+
 
 

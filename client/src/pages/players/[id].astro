@@ -1,0 +1,40 @@
+---
+
+import Layout from "../../layouts/Layout.astro";
+import PlayerCard from "../../components/PlayerCard.astro";
+import PlayersList from "../../components/PlayersList.astro";
+
+import fetchApi from "../../lib/strapi";
+
+export async function getStaticPaths() {
+  const players = await fetchApi({
+    endpoint: "players",
+    wrappedByKey:"data",
+    query:{
+      populate:["*"],
+    }
+  });
+  
+
+  const paths = players.map((player, i) => ({
+    params: { id: player.id.toString() },
+    props: {
+        player,
+    },
+  }));
+
+  return paths;
+
+  
+}
+
+const { player } = Astro.props;
+---
+
+
+
+<Layout>
+
+  <PlayerCard players={player} />
+
+</Layout>

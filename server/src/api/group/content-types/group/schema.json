@@ -4,7 +4,8 @@
   "info": {
     "singularName": "group",
     "pluralName": "groups",
-    "displayName": "group"
+    "displayName": "group",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,20 +19,24 @@
       "type": "blocks"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "players": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::player.player",
       "mappedBy": "group"
+    },
+    "subname": {
+      "type": "string"
     }
   }
 }

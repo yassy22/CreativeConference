@@ -1,0 +1,85 @@
+---
+import headerImage from '../assets/gif/kaisa_1.gif';
+import { Image } from "astro:assets";
+
+
+const { groupi } = Astro.props;
+
+console.log(groupi);
+
+
+---
+
+
+<div class="fold">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">{groupi.attributes.name}</h1>
+                <h2 class="text-center">{groupi.attributes.subname}</h2>
+                <h3 class="text-center">IIT (ISM) Dhanbad</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+        
+                <img src={import.meta.env.STRAPI_URL+groupi.attributes.image.data[0].attributes.formats.medium.url} alt="">
+       
+            </div>
+    </div>
+</div>
+
+<!-- {import.meta.env.STRAPI_URL+groupi.attributes.image.data[0].attributes.url} -->
+
+<style>
+
+    .fold{
+        height: 100vh;
+    }
+  
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10rem;
+        
+    }
+
+  
+    h1 {
+       font-family: "alphaLyrae";
+       font-size: 120px;
+    }
+    h2 {
+       font-family: "alphaLyrae";
+       font-size: 100px;
+    }
+    h3 {
+       font-family: "alphaLyrae";
+       font-size: 70px;
+       padding-top: 20px;
+    }
+</style>
+   
+
+ 
+
+ 
+ 
+<style>
+    .fold{
+        height: 100vh;
+    }
+    h1 {
+       font-family: "alphaLyrae";
+       font-size: 80px;
+    }
+</style>
+  
+  
+
+
+  
+  

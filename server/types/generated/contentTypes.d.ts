@@ -726,6 +726,7 @@ export interface ApiGroupGroup extends Schema.CollectionType {
     singularName: 'group';
     pluralName: 'groups';
     displayName: 'group';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -739,6 +740,7 @@ export interface ApiGroupGroup extends Schema.CollectionType {
       'oneToMany',
       'api::player.player'
     >;
+    subname: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
