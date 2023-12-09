@@ -9,12 +9,26 @@ import GroupsLayout from '../layouts/GroupsLayout.astro';
 
 
 
+import fetchApi from '../lib/strapi';
+
+const players = await fetchApi({
+  endpoint: "players",
+  wrappedByKey: "data",
+  query: { populate: ["*"]  },
+});
 
 
 ---
 
 
 <Layout>
+  <PlayersList players={players} />
+
+  <ul>
+    
+ 
+
+
   
  
 

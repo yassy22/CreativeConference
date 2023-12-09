@@ -1,0 +1,35 @@
+---
+const { players } = Astro.props;
+
+
+---
+
+
+
+
+ <div>
+
+{
+  players.map((player) => (
+    <li>
+      <a href={`${import.meta.env.BASE_URL}./players/${player.id}`}>
+        <h1>{player.attributes.name}</h1>
+        <img src={import.meta.env.STRAPI_URL+player.attributes.image.data[0].attributes.formats.small.url} alt="">
+
+      </a>
+    </li>
+  ))
+}
+</div>
+
+
+
+<style>
+  
+ div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  } 
+  </style>

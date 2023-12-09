@@ -1,8 +1,8 @@
 ---
 
 import Layout from "../../layouts/Layout.astro";
-import PlayerCard from "../../components/PlayerCard.astro";
-import PlayersList from "../../components/PlayersList.astro";
+import PlayerCard from "../../components/cards/players/PlayerCard.astro";
+import PlayersList from "../../components/cards/players/PlayersList.astro";
 
 import fetchApi from "../../lib/strapi";
 
@@ -31,10 +31,7 @@ export async function getStaticPaths() {
 const { player } = Astro.props;
 ---
 
-
-
 <Layout>
-
+  
   <PlayerCard players={player} />
-
 </Layout>

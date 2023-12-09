@@ -4,6 +4,9 @@ import fetchApi from "../../lib/strapi";
 import GroupsLayout from "../../layouts/GroupsLayout.astro";
 
 import Layout from "../../layouts/Layout.astro";
+import PlayersList from "../../components/cards/players/PlayersList.astro";
+import PlayerCard from "../../components/cards/players/PlayerCard.astro";
+
 
 
 export async function getStaticPaths() {
@@ -36,6 +39,8 @@ const { group } = Astro.props;
 
 
 <GroupsLayout groupi={group}>
- 
-   
+  <PlayerCard />
+
   <Layout />
+
+
