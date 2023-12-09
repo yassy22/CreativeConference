@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+import SpeakerssList from "../components/cards//speakers/SpeakersList.astro";
 
 import fetchApi from '../lib/strapi';
 
@@ -18,9 +19,13 @@ console.log(speakers);
 
 
 
+<Layout>
+    <SpeakerssList speakers={speakers} />
+  
+  
+  </Layout>
 
 
+    
+ 
 
-
-
-<Layout/>

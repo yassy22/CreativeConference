@@ -1,0 +1,36 @@
+---
+
+import Layout from "../../layouts/Layout.astro";
+import SpeakersCard from "../../components/cards/speakers/SpeakersCard.astro";
+
+import fetchApi from "../../lib/strapi";
+
+export async function getStaticPaths() {
+  const speakers = await fetchApi({
+    endpoint: "speakers",
+    wrappedByKey:"data",
+    query:{
+      populate:["*"],
+    }
+  });
+  
+
+  const paths = speakers.map((speaker, i) => ({
+    params: { id: speaker.id.toString() },
+    props: {
+      speaker,
+    },
+  }));
+
+  return paths;
+
+  
+}
+
+const { speaker } = Astro.props;
+---
+
+<Layout>
+  
+  <SpeakersCard speakers={speaker} />
+</Layout>

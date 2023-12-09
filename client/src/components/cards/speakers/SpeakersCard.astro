@@ -1,0 +1,17 @@
+---
+
+const { speakers } = Astro.props;
+
+console.log(speakers);
+---
+
+
+
+<ul>
+  <h1 class="text-center">{speakers.attributes.naam}</h1>
+  <img src={import.meta.env.STRAPI_URL+speakers.attributes.image.data.attributes.formats.small.url} alt=""> 
+  <p>{speakers.attributes.body} </p>
+</ul>
+
+
+
