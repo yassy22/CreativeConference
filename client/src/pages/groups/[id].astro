@@ -14,7 +14,7 @@ export async function getStaticPaths() {
     endpoint: "groups",
     wrappedByKey: "data",
     query: {
-        populate:[ "*"], },
+        populate:[ "image","players"], },
   });
 
   const paths = groups.map((group, i) => ({
@@ -31,15 +31,23 @@ export async function getStaticPaths() {
 
 const { group } = Astro.props;
 
+console.log(group)
+
 ---
 
 
 <Layout>
-   
+
+  <h2>group in the <span>{group.attributes.name}</span> category</h2>
+ 
 
 
 <GroupsLayout groupi={group}>
-  <PlayerCard />
+  
+  <PlayersList playergroup={group.attributes.players.data} />
+
+
+
 
   <Layout />
 

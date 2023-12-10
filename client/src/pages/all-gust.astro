@@ -1,38 +1,29 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import PlayerCard from "../components/cards/players/PlayerCard.astro";
 
-import Layout from '../layouts/Layout.astro';
-import PlayerCard from '../components/cards/players/PlayerCard.astro';
+import PlayersList from "../components/cards/players/PlayersList.astro";
+import GroupsLayout from "../layouts/GroupsLayout.astro";
 
+import Filter from "../components/filters/Filter.astro";
 
-import PlayersList from '../components/cards/players/PlayersList.astro';
-import GroupsLayout from '../layouts/GroupsLayout.astro';
-
-
-
-import fetchApi from '../lib/strapi';
+import fetchApi from "../lib/strapi";
 
 const players = await fetchApi({
   endpoint: "players",
   wrappedByKey: "data",
-  query: { populate: ["*"]  },
+  query: { populate: ["players", "group", "rol", "image"] },
+});
+
+const groups = await fetchApi({
+  endpoint: "groups",
+  wrappedByKey: "data",
 });
 
 
 ---
 
-
 <Layout>
-  <PlayersList players={players} />
-
-
-    
- 
-
-
-  
- 
-
-
+  <Filter groups={groups} />
+  <PlayersList players={players} showCategory={false} />
 </Layout>
-
-

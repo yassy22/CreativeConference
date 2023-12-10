@@ -1,37 +1,51 @@
 ---
+const { players, showCategory = true } = Astro.props;
 
- const { players } = Astro.props;
-
-console.log(players);
 ---
 
-  
 
 
 
 
-<ul>
+
+
+
+
+ <ul>
   <h1 class="text-center">{players.attributes.group.data.attributes.name}</h1>
 
   <h1 class="text-center">{players.attributes.name}</h1>
   <p>rol {players.attributes.rol.data.attributes.name}</p>
 
-
-  <img src={import.meta.env.STRAPI_URL+players.attributes.image.data[0].attributes.formats.small.url} alt="">
-
-
+  <img
+    src={import.meta.env.STRAPI_URL +
+      players.attributes.image.data[0].attributes.formats.small.url}
+    alt=""
+  />
 </ul>
 
 <div>
   <h2>champion pool</h2>
   {
     players.attributes.champions.data.map((champion) => {
-      return <p> {champion.attributes.name}</p>
-      <img src={import.meta.env.STRAPI_URL+champion.attributes.image.data[0].attributes.url} alt="">
-
-
-
+      return (
+        <>
+          <p> {champion.attributes.name}</p>
+          <img
+            src={
+              import.meta.env.STRAPI_URL +
+              champion.attributes.image.data[0].attributes.url
+            }
+            alt=""
+          />
+        </>
+      );
     })
   }
 </div>
 
+
+
+
+
+ -->

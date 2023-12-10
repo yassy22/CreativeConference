@@ -7,6 +7,22 @@
   --xxl-sizing: 120rem;
 
   --backgroud-color: #2b2938;
+
+
+
+
+
+  --s_2: .2rem;
+  --s_1: .5rem;
+  --s1: 1rem;
+  --s2: 1.2rem;
+  --s3: 1.5rem;
+  --s4: 2rem;
+
+  --fs-s: .8rem;
+  --fs-m: 1rem;
+  --fs-l: 1.5rem;
+  --fs-xl: 2rem;
 }
 
 @font-face {

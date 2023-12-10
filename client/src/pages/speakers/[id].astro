@@ -1,5 +1,4 @@
 ---
-
 import Layout from "../../layouts/Layout.astro";
 import SpeakersCard from "../../components/cards/speakers/SpeakersCard.astro";
 
@@ -8,12 +7,11 @@ import fetchApi from "../../lib/strapi";
 export async function getStaticPaths() {
   const speakers = await fetchApi({
     endpoint: "speakers",
-    wrappedByKey:"data",
-    query:{
-      populate:["*"],
-    }
+    wrappedByKey: "data",
+    query: {
+      populate: ["*"],
+    },
   });
-  
 
   const paths = speakers.map((speaker, i) => ({
     params: { id: speaker.id.toString() },
@@ -23,8 +21,6 @@ export async function getStaticPaths() {
   }));
 
   return paths;
-
-  
 }
 
 const { speaker } = Astro.props;
@@ -32,6 +28,5 @@ console.log(speaker);
 ---
 
 <Layout>
-  
   <SpeakersCard speakers={speaker} />
 </Layout>
