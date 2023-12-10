@@ -11,7 +11,10 @@ export async function getStaticPaths() {
     endpoint: "players",
     wrappedByKey:"data",
     query:{
-      populate:["*"],
+      populate:["champions", "champions.image","image", "rol","group"],
+
+
+
     }
   });
   

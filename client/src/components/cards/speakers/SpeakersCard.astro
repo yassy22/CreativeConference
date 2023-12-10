@@ -2,16 +2,91 @@
 
 const { speakers } = Astro.props;
 
-console.log(speakers);
+
 ---
 
+<div class="container">
 
+  <div class="row">
+   
+      <h1 class="text-center">hello i'm</h1>
+      <h2 class="text-center">{speakers.attributes.naam}</h2>
+      <div class="buttons">
+        <a href="#" class="btn ">Discover</a>
+        <a href="#" class="btn btn--white">Tickets</a>
+    </div>
+ </div>
 
 <ul>
-  <h1 class="text-center">{speakers.attributes.naam}</h1>
   <img src={import.meta.env.STRAPI_URL+speakers.attributes.image.data.attributes.formats.small.url} alt=""> 
-  <p>{speakers.attributes.body} </p>
+  <p class="body" >{speakers.attributes.body} </p>
 </ul>
 
 
+</div>
 
+
+<style>
+
+  .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
+    color: white;
+
+  }
+  .container {
+    margin-top: 50px;
+  }
+
+  .text-center{
+   font-size: 150px;
+   font-family: "alphaLyrae";
+  }
+
+  ul{
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .body{
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: "avenir";
+   
+  }
+
+  .buttons{
+        display: flex;
+        justify-content: space-between;
+        width: 600px;
+
+        margin-top: 2rem;
+
+       
+    }
+
+    .btn{
+        font-size: 20px;
+        color: #D9D9D9;
+        border: 1px solid #D9D9D9;
+        padding: 1rem 5rem;
+        text-decoration: none;
+        border-radius: 30px;
+
+        margin-top: 2rem;
+    }
+    .btn--white{
+    background-color: #B33BD5;
+    color: white;
+    border: 0;
+    }
+
+
+    .btn:hover{
+        background-color: #D9D9D9;
+        color: #000;
+    }

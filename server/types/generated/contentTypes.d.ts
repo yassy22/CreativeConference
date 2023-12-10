@@ -690,7 +690,6 @@ export interface ApiChampionChampion extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    description: Attribute.Blocks;
     image: Attribute.Media;
     rol: Attribute.Relation<
       'api::champion.champion',

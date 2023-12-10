@@ -12,9 +12,26 @@ console.log(players);
 
 <ul>
   <h1 class="text-center">{players.attributes.group.data.attributes.name}</h1>
+
   <h1 class="text-center">{players.attributes.name}</h1>
+  <p>rol {players.attributes.rol.data.attributes.name}</p>
+
+
   <img src={import.meta.env.STRAPI_URL+players.attributes.image.data[0].attributes.formats.small.url} alt="">
+
+
 </ul>
 
+<div>
+  <h2>champion pool</h2>
+  {
+    players.attributes.champions.data.map((champion) => {
+      return <p> {champion.attributes.name}</p>
+      <img src={import.meta.env.STRAPI_URL+champion.attributes.image.data[0].attributes.url} alt="">
 
+
+
+    })
+  }
+</div>
 
