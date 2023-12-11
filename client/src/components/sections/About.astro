@@ -1,148 +1,166 @@
 ---
-import aboutIMG from '../../assets/img/Pinterest af.jpg'
-import placeHolder from '../../assets/gif/jhin_2.gif'
-
+import aboutIMG from "../../assets/img/Pinterest af.jpg";
+import placeHolder from "../../assets/gif/jhin_2.gif";
 ---
 
 <div class="about_section">
-<div class="about_content">
+  <div class="about_content">
     <h2 class="about_title">About</h2>
     <p class="text">
-        Bereid je voor op een 3-daagse onderdompeling in de visuele pracht van 
-        League of Legends tijdens LeagueCon 2024! Onze conferentie staat in het 
-        teken van het verkennen en vieren van de artistieke krachten achter een van 's
-        werelds meest geliefde games. Van de creatieve ontwerpen tot de diepgaande ontwikkelingen,
-        ontdek de verborgen schatten en ontmoet de briljante geesten die het speelveld van dit iconische spel vormgeven. 
+      Bereid je voor op een 3-daagse onderdompeling in de visuele pracht van
+      League of Legends tijdens LeagueCon 2024! Onze conferentie staat in het
+      teken van het verkennen en vieren van de artistieke krachten achter een
+      van 's werelds meest geliefde games. Van de creatieve ontwerpen tot de
+      diepgaande ontwikkelingen, ontdek de verborgen schatten en ontmoet de
+      briljante geesten die het speelveld van dit iconische spel vormgeven.
     </p>
     <p class="text">
-     Maak je klaar om een wereld te betreden waarin kunst en gamen samenkomen in een adembenemende ervaring die je niet mag missen. Welkom bij LeagueCon 2024, waar de magie van League of Legends tot leven komt.
+      Maak je klaar om een wereld te betreden waarin kunst en gamen samenkomen
+      in een adembenemende ervaring die je niet mag missen. Welkom bij LeagueCon
+      2024, waar de magie van League of Legends tot leven komt.
     </p>
     <div class="buttons">
-        <a href="#" class="btn ">Discover</a>
-        <a href="#" class="btn btn--white">Tickets</a>
+      <a href="#" class="btn">Discover</a>
+      <a href="#" class="btn btn--white">Tickets</a>
     </div>
-    </div>
-<div class="img">
-    <img class="aboutimg" src={aboutIMG.src} alt="about_img">
-</div>
+  </div>
+  <div class="img">
+    <img class="aboutimg" src={aboutIMG.src} alt="about_img" />
+  </div>
 </div>
 
 <div class="verwachten">
-    <h2 class="verwaten_title" >Wat Kun Je Verwachten</h2>. 
-<div class="verwachte_container">
-<div class="verwachten_content">
+  <h2 class="verwaten_title">Wat Kun Je Verwachten</h2>.
+  <div class="verwachte_container">
+    <div class="verwachten_content">
+      <h2 class="verwachten_title">Discussies en Workshops</h2>
+      <p class="text">
+        Stap in de schoenen van een ontwerper! Onze interactieve workshops zijn
+        een unieke kans om hands-on ervaring op te doen in het ontwerpen van
+        personages. Leer de grondbeginselen van conceptuele ideeën, schetsen en
+        digitale creatie terwijl je je eigen personage tot leven brengt onder
+        begeleiding van ervaren professionals.
+      </p>
 
-    <h2 class="verwachten_title" >Discussies en Workshops</h2>
-    <p class="text">
-        Stap in de schoenen van een ontwerper! Onze interactieve workshops zijn een unieke kans om hands-on ervaring op te doen in het ontwerpen van personages.
-         Leer de grondbeginselen van conceptuele ideeën, schetsen en digitale creatie terwijl je je eigen personage tot leven brengt onder begeleiding van ervaren professionals.
-    </p>
-
-    <div class="buttons">
+      <div class="buttons">
         <a href="#" class="btn btn--white">Tickets</a>
+      </div>
     </div>
 
-</div>
-
-<div class="verwachten_img">
-    <img class="verwachtenimg" src={placeHolder.src} alt="about_img">
-</div>
-
-</div>
-
+    <div class="verwachten_img">
+      <img class="verwachtenimg" src={placeHolder.src} alt="about_img" />
+    </div>
+  </div>
 </div>
 
 
-</div>
 
 <style>
-    .about_section{
-        display: flex;
-        justify-content: space-between;
-        padding-inline: 100px;
-        
-    }
-    .about_title {
-        font-size: 150px;
-        font-family: "alphaLyrae";
-        color: #D9D9D9;
-        padding-bottom: 2rem;
-    }
+  .about_section {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 100px;
+  }
+  .about_title {
+    font-size: 150px;
+    font-family: "alphaLyrae";
+    color: #d9d9d9;
+    padding-bottom: 2rem;
+  }
 
-    .text{
+  .text {
     font-size: 20px;
     line-height: 1.7;
     width: 665px;
 
-    color: #D9D9D9;
+    color: #d9d9d9;
 
     padding-bottom: 2rem;
-    }
-    
+  }
 
-    .buttons{
-        display: flex;
-        justify-content: space-between;
-        width: 600px;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+  }
 
-       
-    }
+  .btn {
+    font-size: 20px;
+    color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+    padding: 1rem 5rem;
+    text-decoration: none;
+    border-radius: 30px;
 
-    .btn{
-        font-size: 20px;
-        color: #D9D9D9;
-        border: 1px solid #D9D9D9;
-        padding: 1rem 5rem;
-        text-decoration: none;
-        border-radius: 30px;
-
-        margin-top: 2rem;
-    }
-    .btn--white{
-    background-color: #B33BD5;
+    margin-top: 2rem;
+  }
+  .btn--white {
+    background-color: #b33bd5;
     color: white;
     border: 0;
-    }
+  }
+
+  .btn:hover {
+    background-color: #d9d9d9;
+    color: #000;
+  }
+
+  .verwachten {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .verwachte_container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding-inline: 100px;
+    width: 100%;
+  }
+
+  .verwachten_title {
+    font-size: 50px;
+    font-family: "alphaLyrae";
+    color: #d9d9d9;
+    padding-bottom: 2rem;
+  }
+
+  .verwaten_title {
+    font-size: 50px;
+    font-family: "MonumentExtended";
+    color: #d9d9d9;
+    padding-bottom: 6rem;
+  }
+
+  .our_speakers {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4rem;
+  }
+  .our_speakers_container {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 100px;
+    width: 100%;
+
+    gap: 2rem;
+  }
+
+  .our_speakers_title {
+    font-family: "alphaLyrae";
+    color: #d9d9d9;
+    font-size: 100px;
+  }
 
 
-    .btn:hover{
-        background-color: #D9D9D9;
-        color: #000;
-    }
-
-    .verwachten{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center;
-
-
-    }
-    .verwachte_container{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-        padding-inline: 100px;
-        width: 100%;
-        
-       
-    }
-
-    .verwachten_title{
-        font-size: 50px;
-        font-family: "alphaLyrae";
-        color: #D9D9D9;
-        padding-bottom: 2rem;
-    }
-
-    .verwaten_title{
-        font-size: 50px;
-        font-family: "MonumentExtended";
-        color: #D9D9D9;
-        padding-bottom: 6rem;
-    
-    }
-    
-   
+  .our_speakersimg{
+    width: 100%;
+    height: 100%
+  }
 </style>

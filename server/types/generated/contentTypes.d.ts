@@ -758,6 +758,40 @@ export interface ApiGroupGroup extends Schema.CollectionType {
   };
 }
 
+export interface ApiHighlightHighlight extends Schema.SingleType {
+  collectionName: 'highlights';
+  info: {
+    singularName: 'highlight';
+    pluralName: 'highlights';
+    displayName: 'highlight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    speakers: Attribute.Relation<
+      'api::highlight.highlight',
+      'oneToMany',
+      'api::speaker.speaker'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::highlight.highlight',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::highlight.highlight',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPlayerPlayer extends Schema.CollectionType {
   collectionName: 'players';
   info: {
@@ -890,6 +924,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::champion.champion': ApiChampionChampion;
       'api::group.group': ApiGroupGroup;
+      'api::highlight.highlight': ApiHighlightHighlight;
       'api::player.player': ApiPlayerPlayer;
       'api::rol.rol': ApiRolRol;
       'api::speaker.speaker': ApiSpeakerSpeaker;
