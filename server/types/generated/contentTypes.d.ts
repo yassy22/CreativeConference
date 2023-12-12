@@ -677,6 +677,42 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'category';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    naam: Attribute.String;
+    speakers: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::speaker.speaker'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiChampionChampion extends Schema.CollectionType {
   collectionName: 'champions';
   info: {
@@ -888,6 +924,11 @@ export interface ApiSpeakerSpeaker extends Schema.CollectionType {
     image: Attribute.Media;
     body: Attribute.RichText & Attribute.Required;
     work: Attribute.String & Attribute.Required;
+    category: Attribute.Relation<
+      'api::speaker.speaker',
+      'manyToOne',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -922,6 +963,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::category.category': ApiCategoryCategory;
       'api::champion.champion': ApiChampionChampion;
       'api::group.group': ApiGroupGroup;
       'api::highlight.highlight': ApiHighlightHighlight;

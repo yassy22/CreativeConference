@@ -8,8 +8,6 @@ const highlight = await fetchApi({
     populate: ["speakers", "speakers.image", "speakers.image.formats"],
   },
 });
-
-// console.log(highlight.attributes.speakers.data[0].attributes.naam);
 ---
 
 <div class="our_speakers">
@@ -109,6 +107,4 @@ const highlight = await fetchApi({
   img:hover {
     transform: scale(1.1);
   }
-
-
 </style>

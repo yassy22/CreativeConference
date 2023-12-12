@@ -2,31 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 
 import SpeakerssList from "../components/cards//speakers/SpeakersList.astro";
+import Filter from "../components/filters/Filter.astro";
 
-
-import fetchApi from '../lib/strapi';
+import fetchApi from "../lib/strapi";
 
 const speakers = await fetchApi({
   endpoint: "speakers",
   wrappedByKey: "data",
-  query: { populate: ["*"]  },
+  query: { populate: ["*"] },
 });
 
+const categories = await fetchApi({
+  endpoint: "categories",
+  wrappedByKey: "data",
+  query: { populate: ["speakers"] },
+});
 
-console.log(speakers);
-
-
+console.log(categories);
 ---
 
-
-
 <Layout>
-    <SpeakerssList speakers={speakers} />
-  
-  
-  </Layout>
+  <Filter categories={categories} />
+  <SpeakerssList speakers={speakers} showCategory={false} />
+</Layout>
 
 
-    
- 
+<style>
+
 

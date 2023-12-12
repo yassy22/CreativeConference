@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SpeakersList from "../../components/cards/speakers/SpeakersList.astro";
+import fetchApi from "../../lib/strapi";
+
+export async function getStaticPaths() {
+  const categories = await fetchApi({
+    endpoint: "categories",
+    wrappedByKey: "data",
+    query: {
+      populate: ["speakers", "speakers.image"],
+    },
+  });
+
+  const paths = categories.map((category, i) => ({
+    params: { id: category.id.toString() },
+    props: {
+      category,
+    },
+  }));
+
+  return paths;
+}
+
+const { category } = Astro.props;
+
+---
+
+<style>
+  h2 {
+    font-size: var(--fs-l);
+    font-weight: bold;
+    margin-bottom: var(--s1);
+    color: white;
+  }
+
+  span {
+    color: var(--c-primary);
+  }
+
+
+  
+</style>
+
+<Layout pageTitle={category.attributes.naam}>
+  <h2>Products in the <span>{category.attributes.naam}</span> category</h2>
+  <SpeakersList speakers={category.attributes.speakers.data} />
+
+  
+</Layout>
+<style>
+  p {
+    color: white;
+  }
+</style>

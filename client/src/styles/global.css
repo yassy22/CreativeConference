@@ -50,3 +50,19 @@ body {
 p {
   font-family: "Poppins", sans-serif;
 }
+ 
+.hidden {
+  display: none;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul , li  {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
