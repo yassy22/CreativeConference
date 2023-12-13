@@ -1,5 +1,5 @@
 ---
-const { categories } = Astro.props;
+const { rols, groups } = Astro.props;
 ---
 
 <script is:inline>
@@ -10,17 +10,18 @@ const { categories } = Astro.props;
 
     if (selection.length > 0) {
       document
-        .querySelectorAll("[data-category]")
+        .querySelectorAll("[data-rol]")
+
         .forEach(($li) => $li.classList.add("hidden"));
 
-      selection.forEach((category) => {
+      selection.forEach((rol) => {
         document
-          .querySelectorAll(`[data-category="${category}"]`)
+          .querySelectorAll(`[data-rol="${rol}"]`)
           .forEach(($li) => $li.classList.remove("hidden"));
       });
     } else {
       document
-        .querySelectorAll("[data-category]")
+        .querySelectorAll("[data-rol]")
         .forEach(($li) => $li.classList.remove("hidden"));
     }
   };
@@ -35,18 +36,20 @@ const { categories } = Astro.props;
 
 <ul class="filter">
   {
-    categories.map((category) => (
-      <li>
-        <label>
-          <span>{category.attributes.naam}</span>
-          <input
-            class="filteroption"
-            type="checkbox"
-            value={category.attributes.naam}
-            name="filter"
-          />
-        </label>
-      </li>
+    rols.map((rol) => (
+      <>
+        <li>
+          <label>
+            <span>{rol.attributes.name}</span>
+            <input
+              class="filteroption"
+              type="checkbox"
+              value={rol.attributes.name}
+              name="filter"
+            />
+          </label>
+        </li>
+      </>
     ))
   }
 </ul>

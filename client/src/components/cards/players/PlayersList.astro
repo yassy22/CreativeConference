@@ -3,13 +3,12 @@ const { players, showCategory } = Astro.props;
 
 import PlayerCard from "./PlayerCard.astro";
 
-{console.log(players.map((player) => player.attributes.group?.data.attributes.name))}
 ---
 
 <div>
   {
     players.map((player) => (
-      <li data-group={player.attributes.group?.data.attributes.name} >
+      <li data-group={player.attributes.group?.data.attributes.name} data-rol={player.attributes.rol?.data.attributes.name} >
         <a href={`${import.meta.env.BASE_URL}./players/${player.id}`}>
           <h1>{player.attributes.name}</h1>
           <img

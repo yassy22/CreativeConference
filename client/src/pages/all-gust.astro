@@ -3,11 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import PlayerCard from "../components/cards/players/PlayerCard.astro";
 
 import PlayersList from "../components/cards/players/PlayersList.astro";
-import GroupsLayout from "../layouts/GroupsLayout.astro";
 
-import Filter from "../components/filters/Filter.astro";
+import Filterplayers from "../components/filters/Filterplayers.astro";
+import Filterrol from "../components/filters/Filterrol.astro";
 
 import fetchApi from "../lib/strapi";
+
+
 
 const players = await fetchApi({
   endpoint: "players",
@@ -18,11 +20,23 @@ const players = await fetchApi({
 const groups = await fetchApi({
   endpoint: "groups",
   wrappedByKey: "data",
+  query: { populate: ["players"] },
 });
 
+const rols = await fetchApi({
+  endpoint: "rols",
+  wrappedByKey: "data",
+  query: { populate: ["rols"] },
+});
 
+console.log(groups);
+console.log(rols);
 ---
 
 <Layout>
+ 
+  <Filterrol rols={rols}  groups={groups}/>
+
+
   <PlayersList players={players} showCategory={false} />
 </Layout>

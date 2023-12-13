@@ -18,15 +18,32 @@ const categories = await fetchApi({
   query: { populate: ["speakers"] },
 });
 
-console.log(categories);
+
 ---
 
 <Layout>
-  <Filter categories={categories} />
-  <SpeakerssList speakers={speakers} showCategory={false} />
+  <div class="filter">
+    <Filter categories={categories} />
+  </div>
+
+  <div class="all_speakers">
+    <SpeakerssList speakers={speakers} showCategory={false} />
+  </div>
+
+  
 </Layout>
 
-
 <style>
+  .all_speakers {
+    height: 100vh;
+  }
 
 
+  .filter {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  }
+
+
+  
+</style>
