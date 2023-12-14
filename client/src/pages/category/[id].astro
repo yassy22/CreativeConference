@@ -43,8 +43,6 @@ const { category } = Astro.props;
 <Layout pageTitle={category.attributes.naam}>
   <h2>Products in the <span>{category.attributes.naam}</span> category</h2>
   <SpeakersList speakers={category.attributes.speakers.data} />
-
-  <Seemore speakers={category.attributes.speakers.data} />
 </Layout>
 <style>
   p {
