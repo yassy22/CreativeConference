@@ -929,6 +929,9 @@ export interface ApiSpeakerSpeaker extends Schema.CollectionType {
       'manyToOne',
       'api::category.category'
     >;
+    description: Attribute.String;
+    Price: Attribute.Decimal;
+    dag: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

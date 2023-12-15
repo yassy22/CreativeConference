@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import SpeakersList from "../../components/cards/speakers/SpeakersList.astro";
-import Seemore from "../../components/detaills/Seemore.astro";
 
 import fetchApi from "../../lib/strapi";
 
@@ -43,6 +42,7 @@ const { category } = Astro.props;
 <Layout pageTitle={category.attributes.naam}>
   <h2>Products in the <span>{category.attributes.naam}</span> category</h2>
   <SpeakersList speakers={category.attributes.speakers.data} />
+  
 </Layout>
 <style>
   p {

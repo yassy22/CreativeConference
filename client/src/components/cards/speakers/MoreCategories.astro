@@ -1,0 +1,28 @@
+---
+import SpeakersListMore from "../../../components/cards/detaills/SpeakersListMore.astro";
+import fetchApi from "../../../lib/strapi";
+
+const speakers = await fetchApi({
+  endpoint: "speakers",
+  wrappedByKey: "data",
+  query: { populate: ["speakers", "image"] },
+});
+---
+
+<SpeakersListMore speakers={speakers} />
+<style>
+  div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  h1 {
+    color: red;
+    font-size: 50px;
+    animation-iteration-count: infinite;
+  }
+</style>

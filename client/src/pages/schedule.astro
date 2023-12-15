@@ -1,10 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ScheduleCard from "../components/cards//schedule/ScheduleList.astro";
+
+import fetchApi from "../lib/strapi";
+
+const schedule = await fetchApi({
+  endpoint: "speakers",
+  wrappedByKey: "data",
+  query: { populate: ["image"] },
+});
+
 ---
 
+<Layout class="test">
+  <div class="container">
+    <div class="title">
+      <h1>schedule</h1>
+    </div>
+
+    <ScheduleCard schedule={schedule} />
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-family: "MonumentExtended";
+    font-size: 6rem;
+    color: white;
+  }
 
 
-<Layout>
-    <h1>404</h1>
-      <p>Page not found</p>
-<Layout/>
+
+  .title {
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+  }
+
+
+ 
+</style>

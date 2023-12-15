@@ -1,0 +1,40 @@
+---
+import SpeakersCardMore from "../detaills/SpeakersCardMore.astro";
+
+const { speakers, showCategory } = Astro.props;
+---
+
+<div class="test">
+  <h1 class="title">see more speakers</h1>
+  <ul class="speaker">
+    {
+      speakers.map((speaker) => (
+        <li data-category={speaker.attributes.category?.data.attributes.naam}>
+          <a href={`${import.meta.env.BASE_URL}./speakers/${speaker.id}`}>
+            <SpeakersCardMore speaker={speaker} showCategory={showCategory} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .speaker {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+  .test {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2rem;
+    padding-left: 2rem;
+    font-family: "lato";
+    color: white;
+  }
+</style>

@@ -1,27 +1,21 @@
 ---
 import SpeakersCard from "./SpeakersCard.astro";
 
-const { speakers, showCategory} = Astro.props;
-
+const { speakers, showCategory } = Astro.props;
 ---
+
 <div class="test">
-
-
-<ul class="speaker">
-  {
-    speakers.map((speaker) => (
-      <li data-category={speaker.attributes.category?.data.attributes.naam}>
-        <a href={`/speakers/${speaker.id}`}>
-          <SpeakersCard
-            speaker={speaker}
-            showCategory={showCategory}
-          />
-        </a>
-      </li>
-    ))
-  }
-</ul>
-
+  <ul class="speaker">
+    {
+      speakers.map((speaker) => (
+        <li data-category={speaker.attributes.category?.data.attributes.naam}>
+          <a href={`/speakers/${speaker.id}`}>
+            <SpeakersCard speaker={speaker} showCategory={showCategory} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </div>
 
 <style>
@@ -30,11 +24,5 @@ const { speakers, showCategory} = Astro.props;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-  
-   
   }
-
-
-
- 
 </style>

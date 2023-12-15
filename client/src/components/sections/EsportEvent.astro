@@ -1,0 +1,74 @@
+---
+import aboutIMG from "../../assets/img/esportevent.png";
+---
+
+<div class="wrapper">
+  <div>
+    <h1 class="title">LeagueCon's E-Sports Arena!</h1>
+    <p class="text">
+      Bereid je voor op een onvergetelijke e-sportervaring bij LeagueCon 2024!
+      Stap in de digitale arena en omarm de spanning van competitieve gaming op
+      het hoogste niveau. Dit is dé kans om jezelf te meten tegen gelijkgestemde
+      gamers en deel uit te maken van de opwinding van League of Legends
+      e-sports.
+    </p>
+    <div class="buttons">
+      <a href="#" class="btn">the event</a>
+    </div>
+  </div>
+
+  <div>
+    <img class="aboutimg" src={aboutIMG.src} alt="about_img" />
+  </div>
+</div>
+
+<style>
+  .aboutimg {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 5rem 1rem;
+
+    gap: 5rem;
+  }
+
+  .title {
+    font-size: 50px;
+    font-family: "alphaLyrae";
+    color: #d9d9d9;
+    padding-bottom: 2rem;
+  }
+
+  .text {
+    font-size: 20px;
+    line-height: 1.7;
+    width: 665px;
+
+    color: #d9d9d9;
+
+    padding-bottom: 2rem;
+  }
+
+  .btn {
+    font-size: 20px;
+    color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+    padding: 1rem 5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: "lato";
+    margin-top: 2rem;
+  }
+
+  .btn:hover {
+    background-color: #d9d9d9;
+    color: #000;
+  }
+</style>

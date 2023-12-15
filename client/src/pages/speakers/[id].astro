@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import SpeakersCard from "../../components/cards/speakers/SpeakersCard.astro";
-import Seemore from "../../components/detaills/Seemore.astro";
+import MoreCategories from "../../components/cards/speakers/MoreCategories.astro";
 
 import fetchApi from "../../lib/strapi";
 
@@ -36,7 +36,7 @@ const { speaker, showCategory = true } = Astro.props;
 
       <div class="buttons">
         <a href="/tickets" class="btn btn--white">Koop tickets</a>
-        <!-- {
+        {
           showCategory && speaker.attributes.category && (
             <a
               class="btn btn--white"
@@ -47,10 +47,12 @@ const { speaker, showCategory = true } = Astro.props;
               More {speaker.attributes.category.data.attributes.naam}
             </a>
           )
-        } -->
+        }
       </div>
     </div>
   </div>
+
+  <MoreCategories />
 </Layout>
 
 <style>

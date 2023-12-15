@@ -15,7 +15,7 @@ const { categories } = Astro.props;
 
       selection.forEach((category) => {
         document
-          .querySelectorAll(`[data-category="${category}"][data-group="${group}"]`)
+          .querySelectorAll(`[data-category="${category}"]`)
           .forEach(($li) => $li.classList.remove("hidden"));
       });
     } else {

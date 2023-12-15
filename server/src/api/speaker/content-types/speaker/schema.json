@@ -44,6 +44,15 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "speakers"
+    },
+    "description": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "dag": {
+      "type": "string"
     }
   }
 }

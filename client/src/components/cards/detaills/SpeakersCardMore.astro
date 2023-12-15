@@ -1,13 +1,10 @@
 ---
 const { speaker } = Astro.props;
-
-const { showBody = false } = Astro.props;
 ---
 
 <div class="wrapper" transition:name={`category-${speaker.id}`}>
   <div class="show_category"></div>
   <div class="content">
-    <h3 class="title">{speaker.attributes.naam}</h3>
     <div class="image">
       <img
         src={import.meta.env.STRAPI_URL +
@@ -15,24 +12,23 @@ const { showBody = false } = Astro.props;
         alt={speaker.attributes.title}
       />
     </div>
+    <div class="content_tekst">
+      <h3 class="title">{speaker.attributes.naam}</h3>
+      <p>{speaker.attributes.description}</p>
+      <p>{speaker.attributes.date}</p>
+    </div>
   </div>
 </div>
 <style>
   .title {
-    font-size: 40px;
+    font-size: 20px;
     font-family: "alphaLyrae";
     padding-block-end: 20px;
+    color: violet;
   }
-
-  .container {
-    margin-top: 50px;
+  .content_tekst{
+    padding: 20px;
   }
-
-  .text-center {
-    font-size: 150px;
-    font-family: "alphaLyrae";
-  }
-
   ul {
     display: flex;
     width: 60%;
@@ -44,23 +40,20 @@ const { showBody = false } = Astro.props;
     justify-content: center;
   }
 
-  .category {
-    font-size: 20px;
-    font-family: "alphaLyrae";
-    padding-block-end: 20px;
-  }
-
   .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
     margin: 20px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 10px;
     transition: all 0.5s ease-in-out;
+    
   }
 
- 
+  img {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 4%;
+  }
+
+  
 </style>

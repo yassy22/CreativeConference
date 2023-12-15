@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import PlayerCard from "../../components/cards/players/PlayerCard.astro";
+import MoreCategories from "../../components/cards/speakers/MoreCategories.astro";
 
 import fetchApi from "../../lib/strapi";
 
@@ -30,4 +31,5 @@ console.log(player.attributes.group);
 
 <Layout>
   <PlayerCard players={player} />
+  <MoreCategories />
 </Layout>
