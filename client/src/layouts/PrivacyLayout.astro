@@ -1,15 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const { frontmatter } = Astro.props; 
+const { frontmatter } = Astro.props;
 
 console.log(frontmatter);
 
 const { title, description } = frontmatter;
 ---
 
-<Layout {title}>
-  <div class="container">{title}</div>
+<Layout class="test" {title}>
+  <div class="container">
+    <h1>{title}</h1>
 
-  <slot />
+    <p>
+      <strong>Verzameling en Gebruik van Persoonlijke Gegevens:</strong> Bij
+      LeagueCon 2024 hechten we veel waarde aan de privacy van onze bezoekers.
+      Wanneer je onze website bezoekt of deelneemt aan onze evenementen, kunnen
+      we mogelijk persoonlijke informatie verzamelen, zoals naam, e-mailadres,
+      en andere relevante gegevens. We verzamelen deze informatie alleen wanneer
+      vrijwillig verstrekt en gebruiken deze om communicatie te faciliteren met
+      betrekking tot het evenement en om een betere gebruikerservaring te
+      bieden.
+    </p>
+    <p>
+      <strong>Cookies en Tracking:</strong> Bij LeagueCon 2024 hechten we veel
+      waarde aan de privacy van onze bezoekers. Wanneer je onze website bezoekt
+      of deelneemt aan onze evenementen, kunnen we mogelijk persoonlijke
+      informatie verzamelen, zoals naam, e-mailadres, en andere relevante
+      gegevens. We verzamelen deze informatie alleen wanneer vrijwillig
+      verstrekt en gebruiken deze om communicatie te faciliteren met betrekking
+      tot het evenement en om een betere gebruikerservaring te bieden.
+    </p>
+    <p>
+      <strong>Externe Links:</strong> Bij LeagueCon 2024 hechten we veel waarde
+      aan de privacy van onze bezoekers. Wanneer je onze website bezoekt of
+      deelneemt aan onze evenementen, kunnen we mogelijk persoonlijke informatie
+      verzamelen, zoals naam, e-mailadres, en andere relevante gegevens. We
+      verzamelen deze informatie alleen wanneer vrijwillig verstrekt en
+      gebruiken deze om communicatie te faciliteren met betrekking tot het
+      evenement en om een betere gebruikerservaring te biede
+    </p>
+
+    <p>
+      <strong>Externe Links:</strong> zijn niet verantwoordelijk voor de
+      privacypraktijken van deze externe websites en raden aan hun privacybeleid
+      te lezen.
+    </p>
+  </div>
+
+  <style>
+    .container {
+      max-width: 70%;
+      padding-top: 5rem;
+      margin: 0 auto;
+      height: 100vh;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: white;
+      padding-bottom: 1rem;
+      font-family: "lato";
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: white;
+      font-family: "lato";
+      padding-bottom: 1rem;
+    }
+
+    strong {
+      font-family: "inter";
+      font-weight: 800;
+    }
+  </style>
 </Layout>
