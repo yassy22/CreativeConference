@@ -918,9 +918,7 @@ export interface ApiSpeakerSpeaker extends Schema.CollectionType {
   };
   attributes: {
     naam: Attribute.String;
-    date: Attribute.Date &
-      Attribute.Required &
-      Attribute.DefaultTo<'2023-12-12'>;
+    date: Attribute.Date & Attribute.Required;
     image: Attribute.Media;
     body: Attribute.RichText & Attribute.Required;
     work: Attribute.String & Attribute.Required;
@@ -932,6 +930,8 @@ export interface ApiSpeakerSpeaker extends Schema.CollectionType {
     description: Attribute.String;
     Price: Attribute.Decimal;
     dag: Attribute.String;
+    location: Attribute.String;
+    uur: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

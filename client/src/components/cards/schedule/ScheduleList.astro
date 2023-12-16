@@ -11,7 +11,11 @@ console.log(schedule);
           <p class="dag">{player.attributes.dag}</p>
           <h1 class="naam">{player.attributes.naam}</h1>
           <p class="date">{player.attributes.date}</p>
-          <h2 class="price">{player.attributes.Price} € euros</h2>
+          <h2 class="uur">{player.attributes.uur} </h2>
+          <h2 class="location">{player.attributes.location} </h2>
+          <h2 class="Price">{player.attributes.Price} € euros</h2>
+        
+
           <div class="buttons">
             <a
               href={`${import.meta.env.BASE_URL}/speakers/`}
@@ -74,6 +78,23 @@ console.log(schedule);
     color: #f2f2f2;
   }
 
+  .uur {
+    font-family: "lato";
+    font-size: 1rem;
+    color: #f2f2f2;
+    padding-left: 0.5rem;
+
+  }
+
+  .location {
+    font-family: "lato";
+    font-size: 1rem;
+    color: #f2f2f2;
+    padding-left: 0.5rem;
+    padding-top:0.5rem ;
+    padding-bottom: 1rem;
+  }
+
   .naam {
     font-family: "lato";
     font-size: 1rem;
@@ -87,6 +108,8 @@ console.log(schedule);
     font-size: 1rem;
     color: #f2f2f2;
     padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+
   }
 
   img {
@@ -97,12 +120,20 @@ console.log(schedule);
     border-radius: 10px;
   }
 
+  .Price {
+    font-family: "lato";
+    font-size: 1rem;
+    color: #b33bd5;
+   
+    padding-left: 0.5rem;
+  }
+
   .price {
     font-family: "lato";
     font-size: 1rem;
     color: #f2f2f2;
     padding-top: 1rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: .5rem;
     padding-left: 0.5rem;
   }
 
@@ -145,5 +176,6 @@ console.log(schedule);
   align-items: center;
   gap: 50px;
   padding-left: 0.5rem;
+  padding-top: 2rem;
 }
 </style>

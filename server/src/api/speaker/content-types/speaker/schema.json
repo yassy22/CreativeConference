@@ -17,7 +17,6 @@
     },
     "date": {
       "type": "date",
-      "default": "2023-12-12",
       "required": true
     },
     "image": {
@@ -52,6 +51,12 @@
       "type": "decimal"
     },
     "dag": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "uur": {
       "type": "string"
     }
   }

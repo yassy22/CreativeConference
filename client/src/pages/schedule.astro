@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ScheduleCard from "../components/cards//schedule/ScheduleList.astro";
+import LastDay from "../components/sections/LastDay.astro";
 
 import fetchApi from "../lib/strapi";
 
@@ -19,6 +20,7 @@ const schedule = await fetchApi({
     </div>
 
     <ScheduleCard schedule={schedule} />
+    <LastDay />
   </div>
 </Layout>
 
