@@ -1,0 +1,49 @@
+---
+const { players, prev, next, path } = Astro.props;
+
+
+---
+
+<style>
+  nav {
+    background-color: white;
+    border-radius: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: var(--s1) var(--s4);
+    max-width: var(--maxContent);
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .right {
+    margin-left: auto;
+  }
+</style>
+
+
+<nav>
+  <ul>
+    {
+      prev && (
+        <li>
+          <a href={`${import.meta.env.BASE_URL}./${path}/${prev.id}`}>
+            Previous player
+          </a>
+        </li>
+      )
+    }
+    {
+      next && (
+        <li class="right">
+          <a href={`${import.meta.env.BASE_URL}./${path}/${next.id}`}>
+            Next player
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</nav>

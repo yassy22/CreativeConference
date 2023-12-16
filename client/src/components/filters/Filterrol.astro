@@ -54,6 +54,22 @@ const { rols, groups } = Astro.props;
   }
 </ul>
 
+<ul class="filter">
+  {
+    groups.map((rol) => (
+      <>
+        <label>
+          <li>
+            <a href={`${import.meta.env.BASE_URL}./groups/${rol.id}`}>
+              {rol.attributes.name}{" "}
+            </a>
+          </li>
+        </label>
+      </>
+    ))
+  }
+</ul>
+
 <style>
   ul {
     display: flex;

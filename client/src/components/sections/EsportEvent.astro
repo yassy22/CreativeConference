@@ -1,4 +1,7 @@
 ---
+
+import img1 from "../../assets/img/img1.jpg";
+
 ---
 
 <div class="wrapper">
@@ -12,12 +15,15 @@
       e-sports.
     </p>
     <div class="buttons">
-      <a href="#" class="btn">the event</a>
+      <a href={`${import.meta.env.BASE_URL}./e-sport`} class="btn">the event</a
+      >
     </div>
   </div>
 
+
   <div>
-  </div>
+
+    <img src={img1.src} alt="img1" class="aboutimg" />
 </div>
 
 <style>

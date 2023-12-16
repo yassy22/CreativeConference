@@ -22,14 +22,35 @@ const rols = await fetchApi({
   query: { populate: ["rols"] },
 });
 
-console.log(groups);
-console.log(rols);
-
 const pageTitle = "all players";
 ---
 
 <Layout {pageTitle}>
+  <div class="our_gust">
+    <h1 class="our_gust_title">our <br /> players</h1>
+  </div>
   <Filterrol rols={rols} groups={groups} />
 
-  <PlayersList players={players} showCategory={false} />
+  <PlayersList players={players} showCategory={false} groups={groups} />
 </Layout>
+
+<style>
+  .our_gust {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+  }
+
+  .our_gust_title {
+    font-size: 10rem;
+    font-family: "alphaLyrae";
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+</style>

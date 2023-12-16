@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PlayerCard from "../../components/cards/players/PlayerCard.astro";
 import MoreCategories from "../../components/cards/speakers/MoreCategories.astro";
+import PrevNext from "../../components/cards/players/PrevNext.astro";
 
 import fetchApi from "../../lib/strapi";
 
@@ -18,18 +19,28 @@ export async function getStaticPaths() {
     params: { id: player.id.toString() },
     props: {
       player,
+      next: i < players.length - 1 ? players[i + 1] : null,
+      prev: i > 0 ? players[i - 1] : null,
     },
   }));
 
   return paths;
 }
 
-const { player } = Astro.props;
+const groups = await fetchApi({
+  endpoint: "groups",
+  wrappedByKey: "data",
+  query: { populate: ["players"] },
+});
 
-console.log(player.attributes.group);
+const { player, prev, next } = Astro.props;
+
+// console.log(player.attributes.group);
 ---
 
 <Layout>
-  <PlayerCard players={player} />
-  <MoreCategories />
+  <PlayerCard players={player} group={groups} />
+  <PrevNext prev={prev} next={next} path="players" />
+
+  <div class="about_groups"></div>
 </Layout>

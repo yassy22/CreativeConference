@@ -18,30 +18,50 @@ const categories = await fetchApi({
   query: { populate: ["speakers"] },
 });
 
+const groups = await fetchApi({
+  endpoint: "groups",
+  wrappedByKey: "data",
+  
+});
+
 
 ---
 
 <Layout>
+  <div class="our_gust">
+    <h1 class="our_gust_title">our <br /> SPEAKERS</h1>
+  </div>
   <div class="filter">
-    <Filter categories={categories} />
+    <Filter categories={categories}  groups={groups} />
   </div>
 
   <div class="all_speakers">
     <SpeakerssList speakers={speakers} showCategory={false} />
   </div>
-
-  
 </Layout>
 
 <style>
-
-
-
   .filter {
-  margin-top: 50px;
-  margin-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
+  .our_gust {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+  }
 
-  
+  .our_gust_title {
+    font-size: 10rem;
+    font-family: "alphaLyrae";
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
 </style>

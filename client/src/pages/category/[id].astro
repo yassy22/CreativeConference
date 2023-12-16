@@ -40,12 +40,14 @@ const { category } = Astro.props;
 </style>
 
 <Layout pageTitle={category.attributes.naam}>
-  <h2>Products in the <span>{category.attributes.naam}</span> category</h2>
+  <h2>more <span>{category.attributes.naam}</span></h2>
   <SpeakersList speakers={category.attributes.speakers.data} />
-  
 </Layout>
 <style>
   p {
     color: white;
+  }
+  h2 {
+    padding-left: 2rem;
   }
 </style>

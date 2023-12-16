@@ -25,9 +25,9 @@ export async function getStaticPaths() {
   }));
 
   return paths;
-
-  
 }
+
+
 
 const { group } = Astro.props;
 
@@ -38,14 +38,15 @@ console.log(group)
 
 <Layout>
 
-  <h2>group in the <span>{group.attributes.name}</span> category</h2>
  
 
 
-<GroupsLayout groupi={group}>
-  
-  <PlayersList playergroup={group.attributes.players.data} />
 
+<GroupsLayout groupi={group}>
+ 
+
+ 
+  
 
 
 

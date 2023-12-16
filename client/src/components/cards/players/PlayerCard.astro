@@ -1,47 +1,91 @@
 ---
-const { players = true } = Astro.props;
+import fetchApi from "../../../lib/strapi";
 
+const { players, group } = Astro.props;
 
+console.log(players.attributes.group.data);
 ---
 
-<ul>
-  <h1 class="text-center">{players.attributes.group.data.attributes.name}</h1>
 
-  <h1 class="text-center">{players.attributes.name}</h1>
-  <p>rol {players.attributes.rol.data.attributes.name}</p>
+<div class="wrapper">
+  <ul class="info_player">
+    <h1 class="name">{players.attributes.name}</h1>
+    <p class="rol">{players.attributes.rol.data.attributes.name} laner</p>
 
-  <img
-    src={import.meta.env.STRAPI_URL +
-      players.attributes.image.data[0].attributes.formats.small.url}
-    alt=""
-  />
-</ul>
+    <img
+      src={import.meta.env.STRAPI_URL +
+        players.attributes.image.data[0].attributes.formats.small.url}
+      alt=""
+    />
+  </ul>
 
-<div>
-  <h2>champion pool</h2>
-  {
-    players.attributes.champions.data.map((champion) => {
-      return (
-        <>
-          <p> {champion.attributes.name}</p>
-          <img
-            src={
-              import.meta.env.STRAPI_URL +
-              champion.attributes.image.data[0].attributes.url
-            }
-            alt=""
-          />
-        </>
-      );
-    })
-  }
+  <div class="champion_pool">
+    <h2 class="champion_pool_title">champion pool</h2>
+    {
+      players.attributes.champions.data.map((champion) => {
+        return (
+          <>
+            <img
+              class="rounded-full"
+              src={
+                import.meta.env.STRAPI_URL +
+                champion.attributes.image.data[0].attributes.url
+              }
+              alt=""
+            />
+          </>
+        );
+      })
+    }
+  </div>
+
+  <div></div>
 </div>
 
-
-
-
 <style>
+  .rounded-full {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: "lato";
+  }
 
- 
+  .info_player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #3d374b;
+    color: #fff;
+    padding-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .info_player .name {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .info_player .rol {
+    margin-bottom: 10px;
+  }
+
+  .champion_pool_title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: "lato";
+  }
+
+  .champion_pool {
+    padding-left: 1rem;
+  }
+  .wrapper {
+    height: 85vh;
+  }
 </style>
- 

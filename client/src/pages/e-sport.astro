@@ -33,7 +33,9 @@ const pageTitle = "E-Sports Dag";
           evenement zal plaatsvinden van 10:00 tot 17:00.
         </p>
         <div class="buttons">
-          <a href="#" class="btn">the event</a>
+          <a href={`${import.meta.env.BASE_URL}./e-sport`} class="btn"
+            >the event</a
+          >
         </div>
       </div>
       <div>
@@ -72,7 +74,9 @@ const pageTitle = "E-Sports Dag";
       </li>
     </div>
     <div class="buttons button_center">
-      <a href="/allgust" class="btn">see the players</a>
+      <a href={`${import.meta.env.BASE_URL}./allgust`} class="btn">
+        see the players
+      </a>
     </div>
   </div>
 </Layout>
