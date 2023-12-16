@@ -4,8 +4,6 @@ import PlayersList from "../components/cards/players/PlayersList.astro";
 import Filterrol from "../components/filters/Filterrol.astro";
 import fetchApi from "../lib/strapi";
 
-
-
 const players = await fetchApi({
   endpoint: "players",
   wrappedByKey: "data",
@@ -26,12 +24,12 @@ const rols = await fetchApi({
 
 console.log(groups);
 console.log(rols);
+
+const pageTitle = "all players";
 ---
 
-<Layout>
- 
-  <Filterrol rols={rols}  groups={groups}/>
-
+<Layout {pageTitle}>
+  <Filterrol rols={rols} groups={groups} />
 
   <PlayersList players={players} showCategory={false} />
 </Layout>

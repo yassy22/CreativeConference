@@ -1,24 +1,239 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import aboutIMG from "../assets/img/esportevent.png";
+import img1 from "../assets/img/The International.jpg";
+import img2 from "../assets/img/header.jpeg";
 
-import Layout from '../layouts/Layout.astro';
-import PlayerCard from '../components/cards/players/PlayerCard.astro';
-
-
-import PlayersList from '../components/cards/players/PlayersList.astro';
-import GroupsLayout from '../layouts/GroupsLayout.astro';
-
-
-
-
-
+const pageTitle = "E-Sports Dag";
 ---
 
+<Layout pageTitle={pageTitle}>
+  <div class="wrapper_headding">
+    <div class="img_heading">
+      <img src={img2.src} alt="" />
+    </div>
+    <div class="heading">
+      <h1 class="title">E-Sports Dag</h1>
+      <p class="sub-title">Beleef de Ultimate Gaming Rush!</p>
+    </div>
+  </div>
 
-<Layout>
-  
- 
+  <div class="wrapper_event">
+    <div class="about_the_event">
+      <div class="about_the_event__content">
+        <h2 class="about_the_event__title">Over het evenement</h2>
+        <p class="about_the_event__text">
+          Natuurlijk, laten we ons richten op een specifieke beschrijving voor
+          het e-sportevenement met betrekking tot League of Legends: LeagueCon
+          2024: E-Sports Dag - Duik in de Wereld van League of Legends Gaming!
+          Na twee dagen vol inspirerende gesprekken en inzichtelijke panels,
+          nodigen we je uit voor de grand finale: de LeagueCon 2024 E-Sports
+          Dag! Stap in de opwindende wereld van competitief gamen met League of
+          Legends, waar jouw gamingvaardigheden en passie centraal staan. Het
+          evenement zal plaatsvinden van 10:00 tot 17:00.
+        </p>
+        <div class="buttons">
+          <a href="#" class="btn">the event</a>
+        </div>
+      </div>
+      <div>
+        <img class="aboutimg" src={aboutIMG.src} alt="about_img" />
+      </div>
+    </div>
+  </div>
 
+  <div class="wat_kan_je_verwachte">
+    <h1 class="title">Wat Kun Je Verwachten</h1>
 
+    <div>
+      <li>
+        <span>Championship Challenges</span> Neem deel aan <strong
+          >uitdagende toernooien en competities,</strong
+        > aangepast aan verschillende vaardigheidsniveaus. Betreed de arena en
+        bewijs jezelf als een ware kampioen.
+      </li>
+      <li>
+        <span>Live Pro-Gamer Demos</span> Ervaar live demonstraties van
+        professionele gamers, waar strategieën, tactieken en adembenemende
+        gameplay hoogtij vieren. Leer van de besten om je eigen spel te
+        verbeteren.
+      </li>
+      <li>
+        <span>Interactieve Gaming Zones</span> Ontdek de interactieve
+        gamingzones, waar je nieuwe maps kunt verkennen, nieuwe technieken kunt
+        leren en kunt genieten van groepsactiviteiten met andere League of
+        Legends enthousiastelingen.
+      </li>
+      <li>
+        <span>Online Matches & Competities</span> Betreed online wedstrijden,
+        neem deel aan spannende gevechten en werk aan je rangorde. Verdien
+        prijzen, bouw nieuwe vriendschappen op en voel de opwinding van het
+        strijden voor de overwinning.
+      </li>
+    </div>
+    <div class="buttons button_center">
+      <a href="/allgust" class="btn">see the players</a>
+    </div>
+  </div>
 </Layout>
+<style>
+  .wrapper_headding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 
+  .heading {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: "MonumentExtended";
+    color: #fff;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: #fff;
+  }
+
+  .about_the_event {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    gap: 7rem;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
+  .about_the_event__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: "MonumentExtended";
+    color: #fff;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: "MonumentExtended";
+    color: #fff;
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+
+  .about_the_event__text {
+    font-size: 20px;
+    line-height: 1.7;
+    width: 665px;
+
+    color: #d9d9d9;
+
+    padding-bottom: 2rem;
+    color: #fff;
+  }
+
+  img.aboutimg {
+    width: 665px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .img_heading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .buttons {
+    padding-top: 2rem;
+  }
+
+  .buttons.button_center {
+    display: flex;
+    justify-content: center;
+  }
+  .btn {
+    font-size: 20px;
+    color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+    padding: 1rem 5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: "lato";
+    margin-top: 2rem;
+  }
+
+  .btn:hover {
+    background-color: #d9d9d9;
+    color: #000;
+  }
+
+  li {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 60%;
+    color: #d9d9d9;
+    padding-bottom: 2rem;
+    color: #fff;
+    font-family: "lato";
+    text-align: center;
+    margin: 0 auto;
+    list-style-type: square;
+  }
+
+  li span {
+    font-family: "MonumentExtended";
+  }
+
+  .wat_kan_je_verwachte {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    padding-top: 10rem;
+  }
+
+  @media (max-width: 768px) {
+    .about_the_event {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .about_the_event__content {
+      margin-bottom: 2rem;
+    }
+
+    .about_the_event__text {
+      width: 100%;
+    }
+
+    img.aboutimg {
+      width: 100%;
+      height: 100%;
+    }
+
+    li {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .about_the_event__text {
+      font-size: 16px;
+    }
+
+    li {
+      font-size: 16px;
+    }
+  }
+</style>
