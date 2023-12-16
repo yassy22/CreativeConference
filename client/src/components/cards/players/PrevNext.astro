@@ -30,7 +30,7 @@ const { players, prev, next, path } = Astro.props;
     {
       prev && (
         <li>
-          <a href={`${import.meta.env.BASE_URL}./${path}/${prev.id}`}>
+          <a href={`${import.meta.env.BASE_URL}/${path}/${prev.id}`}>
             Previous player
           </a>
         </li>
@@ -39,7 +39,7 @@ const { players, prev, next, path } = Astro.props;
     {
       next && (
         <li class="right">
-          <a href={`${import.meta.env.BASE_URL}./${path}/${next.id}`}>
+          <a href={`${import.meta.env.BASE_URL}/${path}/${next.id}`}>
             Next player
           </a>
         </li>

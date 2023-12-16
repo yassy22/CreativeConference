@@ -4,31 +4,34 @@
 
 <div class="footer">
   <div class="footer_links">
-    <a href="/prive/privacy-1">privacy</a>
-    <a href="/prive/privacy-1">Schedule</a>
-    <a href="/prive/privacy-1">E-sport</a>
+    
+
+    <a href={`${import.meta.env.BASE_URL}/prive/privacy-1`}>privacy</a>
+    <a href={`${import.meta.env.BASE_URL}/schedule`}>schedule</a>
+    <a href={`${import.meta.env.BASE_URL}/speakers`}>speakers</a>
+
   </div>
+
+  <style>
+    .footer {
+      left:;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      color: black;
+      text-align: center;
+      text-align: center;
+
+      height: 50px;
+    }
+
+    .footer_links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: 20px;
+      font-family: "lato";
+    }
+  </style>
 </div>
-
-<style>
-  .footer {
-    left: ;
-    bottom: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    color: black;
-    text-align: center;
-    text-align: center;
-
-    height: 50px;
-   
-  }
-
-  .footer_links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    gap: 20px;
-  }
-</style>
