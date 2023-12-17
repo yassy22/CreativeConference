@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 // export default defineConfig({});
 export default defineConfig({
   site: "https://devineyasmineyahyeaden.be",
-  base: "/dist",
+  base: "/creativeconference",
   image: {
     domains: ["localhost"],
   },
